@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="menu.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="#home">
+                    <h1>Liviora</h1>
+                </a>
+                <button class="navbar-toggler" type="button" aria-expanded="false" id="navbar-toggler"  
+                    onclick="document.getElementById('navbar-item').classList.toggle('show')">
+                    <span class="hamburger-bar">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h22M5 16h22M5 24h22"/>
+                        </svg>
+                    </span>
+                </button>
+            </div>
+            <div class="navbar-item" id="navbar-item">
+                <ul>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/pawon adji/index.html#kontak">Kontak</a></li>
+                    <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+                    <li class="nav-item tas">
+                        <a class="nav-link" href="cart.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <g fill="none" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linejoin="round" d="M2.31 11.243A1 1 0 0 1 3.28 10h17.44a1 1 0 0 1 .97 1.242l-1.811 7.243A2 2 0 0 1 17.939 20H6.061a2 2 0 0 1-1.94-1.515z"/>
+                                    <path stroke-linecap="round" d="M9 14v2m6-2v2m-9-6l4-6m8 6l-4-6"/>
+                                </g>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link active" href="akun.html">Akun</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="konten" id="menu">
+        <div class="container-konten">
+            <div class="kategori">
+                <h2>Menu Kategori</h2>
+                <ul>
+                    <li><a href="#jajananSD">Style Pria</a></li>
+                    <li><a href="#jajananPasar">Style Wanita</a></li>
+                    <li><a href="#katering">Style Anak</a></li>
+                    <li><a href="#kueTradisional">Jam Tangan</a></li>
+                </ul>
+            </div>
+
+            <section id="jajananSD">
+                <div class="title">
+                    <h2>Jajanan SD</h2>
+                </div>
+                <div class="container-card">
+                    <!-- Hanya 1 dummy card -->
+                    <div class="card">
+                        <img src="/pawon adji/tumpeng.png" alt="Tumpeng">
+                        <div class="deskripsi">
+                            <h4>Tumpeng</h4>
+                            <h5>Rp. 75.000,00</h5>
+                            <p>Dengan topping yang lengkap kamu dapat merasakan tumpeng yang nikmat</p>
+                            <a href="#"><button>Pesan Sekarang</button></a>
+                            <a href="/pawon adji/detail.html"><button class="btn-detail">Detail</button></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container-footer">
+            <div class="footer-left">
+                <h2>Pawon Adji</h2>
+                <p>Menyajikan cita rasa nusantara yang penuh kenangan. Dari dapur masa lalu untuk hari ini.</p>
+            </div>
+            <div class="footer-mid">
+                <h2>Menu</h2>
+                <ul>
+                    <li><a href="#home">Jajanan SD</a></li>
+                    <li><a href="#kontak">Katering</a></li>
+                    <li><a href="#menu">Jajanan Pasar</a></li>
+                    <li><a href="#menu">Kue Tradisional</a></li>
+                </ul>
+            </div>
+            <div class="footer-kontak">
+                <h2>Hubungi Kami</h2>
+                <div class="container-sosmed">
+                    <ul class="sosmed">
+                        <li><a href="#" class="footer-links">FB</a></li>
+                        <li><a href="#" class="footer-links">IG</a></li>
+                        <li><a href="#" class="footer-links">TW</a></li>
+                    </ul>
+                    <h4>@adji_pawon.official</h4>
+                </div>
+                <div class="container-kontak">
+                    <ul>
+                        <li><h3>Alamat: Jl. 123 No.23 Rt09/Rw02 Cipayung, Kota Depok, Jawa Barat</h3></li>
+                        <li><p>Jam operasional: 08:00 - 16:00</p></li>
+                        <li><p>Telepon: 0812-3456-7890</p></li>
+                        <li><p>Email: mbadind69@gmail.com</p></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2023 Pawon Adji. All rights reserved.</p>
+        </div>  
+    </footer>
+
+    <script>
+        const kategoriList = document.querySelector('.kategori ul');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        kategoriList.addEventListener('mousedown', (e) => {
+            isDown = true;
+            kategoriList.classList.add('dragging');
+            startX = e.pageX - kategoriList.offsetLeft;
+            scrollLeft = kategoriList.scrollLeft;
+        });
+
+        kategoriList.addEventListener('mouseleave', () => {
+            isDown = false;
+            kategoriList.classList.remove('dragging');
+        });
+
+        kategoriList.addEventListener('mouseup', () => {
+            isDown = false;
+            kategoriList.classList.remove('dragging');
+        });
+        
+        kategoriList.addEventListener('mousemove', (e) => {
+            if (!isDown) return; 
+            e.preventDefault();
+            const x = e.pageX - kategoriList.offsetLeft;
+            const walk = (x - startX) * 2;
+            kategoriList.scrollLeft = scrollLeft - walk;
+        });
+    </script>
+</body>
+</html>

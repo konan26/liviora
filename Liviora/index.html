@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liviora</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="#home">
+                    <h1>LIViORA</h1>
+                </a>
+                <button class="navbar-toggler" type="button" aria-expanded="false" id="navbar-toggler"  onclick="document.getElementById('navbar-item').classList.toggle('show')">
+                    <span class="hamburger-bar"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h22M5 16h22M5 24h22"/></svg></span>
+                </button>
+            </div>
+            <div class="navbar-item" id="navbar-item">
+                <ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/pawon adji/index.html#kontak">Kontak</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="menu.html">Menu</a>
+                    </li>
+                    <li class="nav-item tas">
+                        <a class="nav-link cart" href="cart.html" ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><path stroke-linejoin="round" d="M2.31 11.243A1 1 0 0 1 3.28 10h17.44a1 1 0 0 1 .97 1.242l-1.811 7.243A2 2 0 0 1 17.939 20H6.061a2 2 0 0 1-1.94-1.515z"/><path stroke-linecap="round" d="M9 14v2m6-2v2m-9-6l4-6m8 6l-4-6"/></g></svg></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="akun.html" >Akun</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="hero-img">
+        <div class="container-hero-img">
+            <h1>Selamat Datang Di Liviora</h1>
+            <p>Liviora, menghadirkan kesederhanaan dalam hidupmu</p>
+            <a href="#konten" class="btn ">Berbelanja <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M17 18a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2c0-1.11.89-2 2-2M1 2h3.27l.94 2H20a1 1 0 0 1 1 1c0 .17-.05.34-.12.5l-3.58 6.47c-.34.61-1 1.03-1.75 1.03H8.1l-.9 1.63l-.03.12a.25.25 0 0 0 .25.25H19v2H7a2 2 0 0 1-2-2c0-.35.09-.68.24-.96l1.36-2.45L3 4H1zm6 16a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2c0-1.11.89-2 2-2m9-7l2.78-5H6.14l2.36 5z"/></svg></a>
+        </div>
+    </div>
+
+    <div class="konten" id="konten">
+        <div class="container-konten">
+            <section class="favorit">
+                <div class="container-favorit">
+                    <div class="title-favorit title">
+                        <h2>Rekomendasi</h2>
+                    </div>
+                    <div class="container-card">
+                            <div class="card-fav">
+                                <img src="Aurevo.jpg" alt="">
+                                <div class="deskripsi">
+                                    <h4>Aurevo</h4>
+                                    <h5>Rp. 1.950.000,00</h5>
+                                    <p>Setiap detail Aurevo diciptakan untuk mereka yang ingin tampil ikonis.</p>
+                                    <a href="">Pesan Sekarang</a>
+                                </div>
+                            </div>
+                        <div class="card-fav">
+                            <img src="Santora.png" alt="">
+                            <div class="deskripsi">
+                                <h4>Santora</h4>
+                                <h5>Rp. 975.000,00</h5>
+                                <p>Santora, pilihan mereka yang percaya diri dan berkarakter.</p>
+                                <a href="">Pesan Sekarang</a>
+                            </div>
+                        </div>
+                        <div class="card-fav">
+                            <img src="Wyla.jpg" alt="">
+                            <div class="deskripsi">
+                                <h4>Weyla</h4>
+                                <h5>Rp. 750.000,00</h5>
+                                <p>Bergerak bebas, tetap stylish dengan Weyla.</p>
+                                <a href="">Pesan Sekarang</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="menu">
+                <div class="container-menu">
+                    <div class="title-menu title">
+                        <h2>Produk Kami</h2>
+                    </div>
+                    <div class="container-card">
+                        <div class="card-menu">
+                            <img src="Casora.jpg" alt="">
+                            <div class="deskripsi">
+                                <h4>Casora</h4>
+                                <h5>Rp. 350.000,00</h5>
+                                <p>Kesederhanaan yang berkarakter, itulah Casora</p>
+                                <a class="a-menu" href="">Pesan Sekarang</a>
+                            </div>
+                        </div>
+                        <div class="card-menu">
+                            <img src="Flevin.jpg" alt="">
+                            <div class="deskripsi">
+                                <h4>Flevin</h4>
+                                <h5>Rp. 445.000,00</h5>
+                                <p>Detail berkelas, gaya Flevin selalu meninggalkan kesan</p>
+                                <a class="a-menu" href="">Pesan Sekarang</a>
+                            </div>
+                        </div>
+                        <div class="card-menu">
+                            <img src="Fossil.jpg" alt="">
+                            <div class="deskripsi">
+                                <h4>Fossil</h4>
+                                <h5>Rp. 2.075.000,00</h5>
+                                <p>Lebih dari sekadar penunjuk waktu, Fossil adalah simbol gaya</p>
+                                <a class="a-menu" href="">Pesan Sekarang</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#menu">
+                        <button type="button" class="btn">
+                            <span>
+                                Lihat Semua Menu
+                            </span><svg xmlns="http://www.w3.org/2000/svg" width="12" height="24" viewBox="0 0 12 24"><path fill="currentColor" fill-rule="evenodd" d="M10.157 12.711L4.5 18.368l-1.414-1.414l4.95-4.95l-4.95-4.95L4.5 5.64l5.657 5.657a1 1 0 0 1 0 1.414"/></svg>
+                        </button>
+                    </a>
+                </div>
+            </section>
+            <section class="tentang-kami">
+                <div class="container-tentang">
+                    <div class="tentang-left">
+                        <h1>Cerita Kami</h1>
+                        <p>Liviora lahir dari keinginan untuk menghadirkan sesuatu yang berbeda.
+                        </p>
+                    </div>
+                    <div class="tentang-logo">
+                        <img src="/pawon adji/rumah_nenek.png" alt="Liviora">
+                    </div>
+                </div>
+            </section>
+            <section class="kata-mereka">
+                <div class="container-kata">
+                    <div class="title-kata title">
+                        <h2>Kata Mereka</h2>
+                    </div>
+                    <div class="container-card">
+                        <div class="card-kata">
+                            <div class="deskripsi-kata">
+                                <p></p>"Harganya ramah, kualitasnya premium".
+                                <h4>Zizaa</h4>
+                            </div>
+                        </div>
+                        <div class="card-kata">
+                            <div class="deskripsi-kata">
+                                <p>"Outfit Livora selalu up-to-date dengan tren."</p>
+                                <h4>Alex</h4>
+                            </div>
+                        </div>
+                        <div class="card-kata">
+                            <div class="deskripsi-kata">
+                                <p>"Kualitas bajunya bagus banget, adem dipakai seharian."</p>
+                                <h4>Frenk</h4>
+                            </div>
+                        </div>
+                        <div class="card-kata">
+                            <div class="deskripsi-kata">
+                                <p>"Bikin tampil modis tanpa ribet."</p>
+                                <h4>kimon</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container-footer">
+            <div class="footer-left">
+                <h2>Liviora</h2>
+                <p>Liviora hadir untuk menemani setiap langkahmu, menghadirkan fashion yang elegan, sederhana, namun selalu berkesan.</p>
+            </div>
+            <div class="footer-mid">
+                <h2>Menu</h2>
+                <ul>
+                    <li><a href="#home">Style Pria</a></li>
+                    <li><a href="#kontak">Style Wanita</a></li>
+                    <li><a href="#menu">Style Anak</a></li>
+                </ul>
+            </div>
+            <div class="footer-kontak" id="kontak">
+                <h2>Hubungi Kami</h2>
+                <div class="container-sosmed">
+                    <ul class="sosmed">
+                        <li><a href="" class="footer-links"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95"/></svg></a></li>
+                        <li><a href="" class="footer-links"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M3 11c0-3.771 0-5.657 1.172-6.828S7.229 3 11 3h2c3.771 0 5.657 0 6.828 1.172S21 7.229 21 11v2c0 3.771 0 5.657-1.172 6.828S16.771 21 13 21h-2c-3.771 0-5.657 0-6.828-1.172S3 16.771 3 13zm15-3.5a1.5 1.5 0 1 1-3 0a1.5 1.5 0 0 1 3 0M14 13a2 2 0 1 1-4 0a2 2 0 0 1 4 0m2 0a4 4 0 1 1-8 0a4 4 0 0 1 8 0" clip-rule="evenodd"/></svg></a></li>
+                        <li><a href="" class="footer-links"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M16.6 5.82s.51.5 0 0A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6c0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64c0 3.33 2.76 5.7 5.69 5.7c3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48"/></svg></a></li>
+                    </ul>
+                    <h4>@liviora.official</h4>
+                </div>
+                <div class="container-kontak">
+                    <ul>
+                        <li><h3>Alamat: Jl. 123 No.23 Rt09/Rw02 Cipayung, Kota Depok, Jawa Barat</h3></li>
+                        <li><p>Jam operasional: 08:00 - 16:00</p></li>
+                        <li><p>Telepon: 0812-3456-7890</p></li>
+                        <li><p>Email: liviora@gmail.com</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 liviora. All rights reserved.</p>
+        </div>  
+    </footer>
+</body>
+</html>

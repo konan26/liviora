@@ -1,0 +1,437 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body{
+    background-color: #f0f0f0;
+}
+
+.nav-container {
+    width: 100%;
+    max-width: 1200px;
+    margin:  auto;
+    display: flex;
+    align-items: flex-start;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.navbar {
+    background-color: rgba(82, 28, 13, 0.5);
+    padding: 5px 10px;
+    width: 100%;
+    position: fixed;
+    z-index: 99;
+}
+
+.nav-left {
+    width: 100%;
+    display: flex;
+    margin: 0.5rem 0.5rem 0rem 0.5rem;
+    justify-content: space-between;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: "Lobster";
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.navbar-item {
+    padding: 1rem 0;
+    display: flex;
+    font-family: 'roboto';
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    text-shadow: 2px 3px black;
+}
+
+.navbar-item svg {
+    filter: drop-shadow(2px 3px black);
+}
+
+.navbar-item ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.navbar-item a {
+    padding: 0.5rem 0.75rem;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.navbar-item a:hover {
+    color: white;
+    background-color: #DE651A;
+}
+
+.navbar-toggler {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    margin-left: auto;
+}
+
+.navbar-toggler svg {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    bottom: 5px;
+    color: white;
+}
+
+.navbar-toggler:hover {
+    background-color: #DE651A;
+    border-radius: 5px;
+}
+
+.nav-link svg{
+    color: white;
+    width: 1.5rem;
+    height: 1.5rem;
+    vertical-align: middle;
+    transition: color 0.3s;
+}
+
+@media screen and (min-width: 769px) {
+    .navbar-item {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .navbar-item ul {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .navbar-toggler {
+        display: none;
+    }
+
+    .navbar .nav-item:not(:last-child) {
+        margin-right: 1rem;
+        padding-right: 1rem;
+        border-right: 1px solid #ccc;
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+    .nav-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav-left {
+    margin: 0rem 0.5rem 0rem 0.5rem;
+    }
+
+    .nav-left h1 {
+        padding: 1rem 0;
+    }
+
+    .navbar-item {
+        display: none;
+        flex-direction: column;
+        background-color: rgba(82, 28, 13, 0.2);
+        padding: 1rem;
+        width: 100%;
+        transition: max-height 0.3s ease-in-out;
+    }
+
+    .navbar-item ul{
+        flex-direction: column;
+    }
+
+    .navbar-item.show {
+        display: flex;
+    }
+
+    .navbar-toggler {
+        width: 24px;
+        height: 24px;
+        margin: auto 1rem;
+        display: block;
+        color: white;
+    }
+}
+
+.navbar-toggler.active .navbar-item {
+    display: flex;
+}
+
+.konten {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: 'roboto';
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding-top: 5rem;
+}
+
+.main-title {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 1rem 2rem;
+    text-align: center;
+}
+
+.title {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 1rem 2rem;
+    text-align: left;
+}
+
+.poto-profil {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.poto-profil img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.biodata {
+    width: 250px;
+    justify-content: center;
+    text-align: center;
+    margin: 1rem auto;
+    background: #f0f0f0;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+}
+
+.biodata p {
+    width: 250px;
+    display: flex;
+    text-align: left;
+    line-height: 1.2rem;
+    font-size: 0.9rem;
+    margin: 0 auto;
+}
+
+.akun-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.akun-actions button {
+    width: 150px;
+    height: 40px;
+    padding: 0 1.2rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    background-color: #FF9B45;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, color 0.3s;
+}
+
+.akun-actions button:hover {
+    color: white;
+    background-color: #DE651A;
+    transform: scale(1.05);
+}
+
+@media screen and (max-width: 768px) {
+    .akun-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    .akun-actions button {
+        width: 150px;
+        margin-bottom: 0.5rem;
+    }
+    .akun-actions button:last-child {
+        margin-bottom: 0;
+    }
+    .poto-profil{
+        width: 50px;
+        height: 50px;
+    }
+    .title{
+        font-size: 0.8rem;
+        margin: 0.2rem auto 0.8rem;
+    }
+}
+
+.edit-profil {
+    display: none;
+}
+
+.btn .active {
+    background-color: #C26C0A;
+    color: white;
+}
+
+.riwayat {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.order-card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    margin-bottom: 1rem;
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin-bottom: 0.6rem;
+}
+
+.order-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0.5rem;
+}
+
+.order-img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.order-info {
+    flex: 1;
+}
+
+.lihat-semua-btn {
+    background: none;
+    border: none;
+    color: #ff6000;
+    font-size: 0.9rem;
+    cursor: pointer;
+    margin-left: 5rem;
+    margin-top: -0.5rem;
+}
+
+.order-actions {
+    display: flex;
+    justify-content: end;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.btn-action {
+    background-color: #fff;
+    color: #ff6000;
+    border: 1px solid #ff6000;
+    border-radius: 5px;
+    padding: 5px 12px;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.edit-profil {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.edit-profil h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.edit-profil form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.edit-profil label {
+    font-weight: bold;
+    margin-top: 0.5rem;
+    color: #333;
+}
+
+.edit-profil input[type="text"],
+.edit-profil input[type="email"],
+.edit-profil input[type="password"],
+.edit-profil input[type="file"] {
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.edit-profil input[type="file"] {
+    padding: 0.4rem;
+    background-color: #f8f8f8;
+}
+
+.btn-simpan {
+    width: 160px;
+    padding: 0.6rem;
+    background-color: #FF9B45;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    margin-top: 1rem;
+    align-self: center;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-simpan:hover {
+    background-color: #DE651A;
+    transform: scale(1.05);
+}
+
+/* Responsive untuk mobile */
+@media screen and (max-width: 768px) {
+    .edit-profil {
+        padding: 1rem;
+    }
+    .btn-simpan {
+        width: 100%;
+    }
+}

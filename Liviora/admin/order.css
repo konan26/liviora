@@ -1,0 +1,248 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #f0f0f0;
+}
+
+.nav-container {
+    width: 100%;
+    max-width: 1200px;
+    margin:  auto;
+    display: flex;
+    align-items: flex-start;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.navbar {
+    background-color: rgba(82, 28, 13, 0.5);
+    padding: 5px 10px;
+    width: 100%;
+    position: fixed;
+    z-index: 99;
+}
+
+.nav-left {
+    width: 100%;
+    display: flex;
+    margin: 0.5rem 0.5rem 0rem 0.5rem;
+    justify-content: space-between;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: "Lobster";
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.navbar-item {
+    padding: 1rem 0;
+    display: flex;
+    font-family: 'roboto';
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    text-shadow: 2px 3px black;
+}
+
+.navbar-item ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.navbar-item a {
+    padding: 0.5rem 0.75rem;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.navbar-item a:hover {
+    color: white;
+    background-color: #DE651A;
+}
+
+.navbar-toggler {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    margin-left: auto;
+}
+
+.navbar-toggler svg {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    bottom: 5px;
+    color: white;
+}
+
+.navbar-toggler:hover {
+    background-color: #DE651A;
+    border-radius: 5px;
+}
+
+.nav-link svg{
+    color: white;
+    width: 1.5rem;
+    height: 1.5rem;
+    vertical-align: middle;
+    transition: color 0.3s;
+}
+
+@media screen and (min-width: 769px) {
+    .navbar-item {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .navbar-item ul {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .navbar-toggler {
+        display: none;
+    }
+
+    .navbar .nav-item:not(:last-child) {
+        margin-right: 1rem;
+        padding-right: 1rem;
+        border-right: 1px solid #ccc;
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+    .nav-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav-left {
+    margin: 0rem 0.5rem 0rem 0.5rem;
+    }
+
+    .nav-left h1 {
+        padding: 1rem 0;
+    }
+
+    .navbar-item {
+        display: none;
+        flex-direction: column;
+        background-color: rgba(82, 28, 13, 0.3);
+        padding: 1rem;
+        width: 100%;
+        transition: max-height 0.3s ease-in-out;
+    }
+
+    .navbar-item ul{
+        flex-direction: column;
+    }
+
+    .navbar-item.show {
+        display: flex;
+    }
+
+    .navbar-toggler {
+        width: 24px;
+        height: 24px;
+        margin: auto 1rem;
+        display: block;
+        color: white;
+    }
+}
+
+.navbar-toggler.active .navbar-item {
+    display: flex;
+}
+
+.konten {
+    width: 100%;
+    min-height: 100vh;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: 'roboto';
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding-top: 5rem;
+}
+
+.title {
+    font-size: 1rem;
+    margin: 1rem auto;
+    text-align: center;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+table {
+    min-width: 800px;
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+table th, table td {
+    padding: 0.8rem;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    white-space: nowrap;
+}
+
+table th {
+    background: #DE651A;
+    color: white;
+    font-weight: 600;
+}
+
+.status {
+    padding: 4px 8px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.status.selesai {
+    background: #D1F7C4;
+    color: #1B5E20;
+}
+
+.status.proses {
+    background: #FFF5C4;
+    color: #9E7700;
+}
+
+.status.batal {
+    background: #FFD1D1;
+    color: #B71C1C;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    table th, table td { 
+        font-size: 0.9rem; 
+        padding: 0.6rem; 
+    }
+
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIwayat Pesanan-Admin</title>
+    <link rel="stylesheet" href="order.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="#home">
+                    <h1>Pawon Adji - Admin</h1>
+                </a>
+                <button class="navbar-toggler" type="button" aria-expanded="false" id="navbar-toggler"  onclick="document.getElementById('navbar-item').classList.toggle('show')">
+                    <span class="hamburger-bar"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h22M5 16h22M5 24h22"/></svg></span>
+                </button>
+            </div>
+            <div class="navbar-item" id="navbar-item">
+                <ul>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="menu.html">Menu</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="order.html">Pesanan</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="penjual.html">Penjual</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="categori.html">Kategori</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="konten">
+        <div class="title">
+            <h2>Riwayat Pesanan</h2>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama Pembeli</th>
+                        <th>Menu</th>
+                        <th>Jumlah</th>
+                        <th>Total Harga</th>
+                        <th>Status</th>
+                        <th>Tanggal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Budi Santoso</td>
+                        <td>Tumpeng Mini</td>
+                        <td>2</td>
+                        <td>Rp150.000</td>
+                        <td><span class="status selesai">Selesai</span></td>
+                        <td>25/08/2025</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Siti Aminah</td>
+                        <td>Jajan Pasar</td>
+                        <td>5</td>
+                        <td>Rp75.000</td>
+                        <td><span class="status proses">Diproses</span></td>
+                        <td>25/08/2025</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Andi</td>
+                        <td>Lemper Ayam</td>
+                        <td>10</td>
+                        <td>Rp100.000</td>
+                        <td><span class="status batal">Batal</span></td>
+                        <td>24/08/2025</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

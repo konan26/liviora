@@ -1,0 +1,121 @@
+:root{
+    --bg: #f3e3cf;
+    --card: #f6e8d6;
+    --text: #1e1e1e;
+    --muted: #6b6b6b;
+    --input: #ffffff;
+    --radius: 22px;
+    --shadow: 0 10px 30px rgba(0,0,0,.10);
+    --gap: 18px;
+}
+
+* { box-sizing: border-box; }
+html,body{ height:100%; }
+body{
+    margin:0;
+    font-family: "Inter", sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+}
+
+.section{
+    margin: 60px 0;
+    background: var(--card);
+    border-radius: calc(var(--radius) + 10px);
+    padding: 20px;
+    box-shadow: var(--shadow);
+}
+
+.auth-card{
+    position: relative;
+    overflow: hidden;
+    min-height: 280px;
+    border-radius: var(--radius);
+    display:grid;
+    grid-template-columns: 1.05fr 1fr;
+}
+
+.auth-card::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        linear-gradient(90deg, var(--card) 0%, rgba(246,232,214,.85) 34%, rgba(246,232,214,0) 52%),
+        url("/pawon adji/image 6.png");
+    background-size: cover;
+    background-position: center;
+    z-index:0;
+}
+
+.auth-inner{
+    position: relative;
+    z-index: 1;
+    padding: 30px;
+    display:flex;
+    align-items:center;
+}
+
+.auth-form{
+    width: 100%;
+    max-width: 500px;
+}
+
+.title{
+    font-weight: 700;
+    margin-bottom: 16px;
+    font-size: 24px;
+}
+
+.grid{
+    display:grid;
+    gap: var(--gap);
+}
+
+.input{
+    width:100%;
+    background: var(--input);
+    border: 0;
+    padding: 13px 16px;
+    font-size: 15px;
+    border-radius: 999px;
+}
+
+.row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top: 10px;
+}
+
+.link{
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration:none;
+}
+.link:hover{ text-decoration: underline; }
+
+.btn{
+    border:0;
+    border-radius: 999px;
+    padding: 10px 20px;
+    background:#fff;
+    box-shadow: var(--shadow);
+    cursor:pointer;
+    font-weight:600;
+}
+
+/* responsive */
+@media(max-width:860px){
+    .auth-card{
+        grid-template-columns:1fr;
+    }
+    .auth-card::after{
+        background:
+        linear-gradient(0deg, var(--card) 0%, rgba(246,232,214,.9) 40%, rgba(246,232,214,0) 70%),
+        url("/pawon adji/image 6.png");
+        opacity: .35;
+    }
+}

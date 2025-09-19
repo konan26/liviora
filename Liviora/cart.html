@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keranjang mu</title>
+    <link rel="stylesheet" href="cart.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="#home">
+                    <h1>Pawon Adji</h1>
+                </a>
+                <button class="navbar-toggler" type="button" aria-expanded="false" id="navbar-toggler"  onclick="document.getElementById('navbar-item').classList.toggle('show')">
+                    <span class="hamburger-bar"><svg xmlns="http://w ww.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h22M5 16h22M5 24h22"/></svg></span>
+                </button>
+            </div>
+            <div class="navbar-item" id="navbar-item">
+                <ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/pawon adji/index.html#kontak">Kontak</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="menu.html">Menu</a>
+                    </li>
+                    <li class="nav-item tas">
+                        <a class="nav-link" href="cart.html" ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><path stroke-linejoin="round" d="M2.31 11.243A1 1 0 0 1 3.28 10h17.44a1 1 0 0 1 .97 1.242l-1.811 7.243A2 2 0 0 1 17.939 20H6.061a2 2 0 0 1-1.94-1.515z"/><path stroke-linecap="round" d="M9 14v2m6-2v2m-9-6l4-6m8 6l-4-6"/></g></svg></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="akun.html" >Akun</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="konten">
+        <div class="container-konten">
+            <div class="cart-container">
+                <h2>Keranjang Saya</h2>
+
+                <div class="cart-item">
+                    <input type="checkbox" class="item-check">
+                    <img src="img/tumpeng-mini.jpg" class="cart-img">
+                    <div class="item-info">
+                        <p class="item-name">Tumpeng Mini</p>
+                        <p class="item-note">Tanpa sambal</p>
+                        <div class="quantity-control">
+                            <button class="dec-btn">-</button>
+                            <input type="text" value="1" class="qty-input">
+                            <button class="inc-btn">+</button>
+                        </div>
+                    </div>
+                    <div class="item-price" data-price="60000">Rp60.000</div>
+                    <button class="delete-btn">Hapus</button>
+                </div>
+
+                <div class="cart-item">
+                    <input type="checkbox" class="item-check">
+                    <img src="img/jajanan.jpg" class="cart-img">
+                    <div class="item-info">
+                        <p class="item-name">Jajanan Pasar</p>
+                        <p class="item-note">Paket 20 pcs</p>
+                        <div class="quantity-control">
+                            <button class="dec-btn">-</button>
+                            <input type="text" value="2" class="qty-input">
+                            <button class="inc-btn">+</button>
+                        </div>
+                    </div>
+                    <div class="item-price" data-price="50000">Rp50.000</div>
+                    <button class="delete-btn">Hapus</button>
+                </div>
+
+                <div class="cart-total">
+                    Total: <strong id="total-price">Rp0</strong>
+                    <button class="checkout-btn">Checkout</button>
+                </div>
+                </div>
+        </div>
+    </div>
+    <script>
+        function updateTotal() {
+            let total = 0;
+            const items = document.querySelectorAll('.cart-item');
+            items.forEach(item => {
+                const checkbox = item.querySelector('.item-check');
+                const qtyInput = item.querySelector('.qty-input');
+                const priceTag = item.querySelector('.item-price');
+                const price = parseInt(priceTag.getAttribute('data-price'));
+
+                if (checkbox.checked) {
+                    const qty = parseInt(qtyInput.value);
+                    total += price * qty;
+                }
+            });
+            document.getElementById('total-price').innerText = 'Rp' + total.toLocaleString('id-ID');
+        }
+
+        // Event listener checkbox
+        document.querySelectorAll('.item-check').forEach(cb => {
+            cb.addEventListener('change', updateTotal);
+        });
+
+        // Tombol + dan -
+        document.querySelectorAll('.inc-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const input = btn.parentNode.querySelector('.qty-input');
+                input.value = parseInt(input.value) + 1;
+                updateTotal();
+            });
+        });
+        document.querySelectorAll('.dec-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const input = btn.parentNode.querySelector('.qty-input');
+                const newVal = parseInt(input.value) - 1;
+                if (newVal >= 1) {
+                    input.value = newVal;
+                    updateTotal();
+                }
+            });
+        });
+
+        // Hapus item
+        document.querySelectorAll('.delete-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const card = btn.closest('.cart-item');
+                card.remove();
+                updateTotal();
+            });
+        });
+
+        // Checkout ke WhatsApp
+        document.querySelector('.checkout-btn').addEventListener('click', function() {
+            let pesan = "Halo, saya ingin pesan:\n";
+            let total = 0;
+
+            const items = document.querySelectorAll('.cart-item');
+            items.forEach(item => {
+                const checkbox = item.querySelector('.item-check');
+                if (checkbox.checked) {
+                    const name = item.querySelector('.item-name').innerText;
+                    const note = item.querySelector('.item-note').innerText;
+                    const qty = item.querySelector('.qty-input').value;
+                    const price = parseInt(item.querySelector('.item-price').getAttribute('data-price'));
+
+                    total += price * qty;
+                    pesan += `- ${name} (${note}) x${qty}\n`;
+                }
+            });
+
+            pesan += `\nTotal: Rp${total.toLocaleString('id-ID')}`;
+
+            const nomorWA = "6283123250381";
+            const url = `https://wa.me/${nomorWA}?text=${encodeURIComponent(pesan)}`;
+
+            window.open(url, "_blank");
+        });
+
+        // Inisialisasi
+        updateTotal();
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard-Penjual</title>
+    <link rel="stylesheet" href="dash.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="#home">
+                    <h1>Pawon Adji - Penjual</h1>
+                </a>
+                <button class="navbar-toggler" type="button" aria-expanded="false" id="navbar-toggler"  onclick="document.getElementById('navbar-item').classList.toggle('show')">
+                    <span class="hamburger-bar"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h22M5 16h22M5 24h22"/></svg></span>
+                </button>
+            </div>
+            <div class="navbar-item" id="navbar-item">
+                <ul>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="menu.html">Menu</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="order.html">Pesanan</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="akun.html">Akun</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="konten">
+        <div class="container-konten">
+            <section class="info-sales">
+                <div class="title">
+                    <h2>Penjualan Kamu</h2>
+                </div>
+                <div class="container-info">
+                    <div class="sales">
+                        <h4>Total Penjualan</h4>
+                        <div class="money">
+                            Rp 200.00
+                        </div>
+                    </div>
+                    <div class="sales">
+                        <h4>Hari ini</h4>
+                        <div class="money">
+                            Rp 200.00
+                        </div>
+                    </div>
+                    <div class="sales">
+                        <h4>Kemarin</h4>
+                        <div class="money">
+                            Rp 200.00
+                        </div>
+                    </div>
+                    <div class="sales">
+                        <h4>Bulan lalu</h4>
+                        <div class="money">
+                            Rp 200.00
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="additional">
+                <div class="chart-card">
+                    <h2>Grafik Penjualan Harian</h2>
+                    <canvas id="salesChart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h2>Menu Favorit</h2>
+                    <div class="doughnut-chart">
+                        <canvas id="favMenuChart"></canvas>
+                    </div>
+                </div>
+                <div class="table-card">
+                    <h2>Pesanan Terakhir</h2>
+                    <div class="table-wrapper">
+                        <table class="order-table">
+                            <thead>
+                                <tr>
+                                    <th>Tanggal</th>
+                                    <th>Nama Pembeli</th>
+                                    <th>Pesanan</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2025-08-20</td>
+                                    <td>Budi</td>
+                                    <td>Nasi Gudeg, Es Teh</td>
+                                    <td>Rp 35.000</td>
+                                </tr>
+                                <tr>
+                                    <td>2025-08-19</td>
+                                    <td>Siti</td>
+                                    <td>Ayam Goreng, Es Jeruk</td>
+                                    <td>Rp 42.000</td>
+                                </tr>
+                                <tr>
+                                    <td>2025-08-18</td>
+                                    <td>Andi</td>
+                                    <td>Sate Usus, Nasi Uduk</td>
+                                    <td>Rp 28.000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </div>  
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        const salesCtx = document.getElementById('salesChart').getContext('2d');
+        new Chart(salesCtx, {
+            type: 'line',
+            data: {
+                labels: ['14 Aug','15 Aug','16 Aug','17 Aug','18 Aug','19 Aug','20 Aug'],
+                datasets: [{
+                    label: 'Jumlah Penjualan',
+                    data: [12, 19, 15, 25, 18, 22, 30],
+                    borderColor: '#C26C0A',
+                    backgroundColor: 'rgba(194,108,10,0.2)',
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'bottom' }
+                },
+                maintainAspectRatio: false
+            }
+        });
+
+        // Grafik Menu Favorit
+        const favCtx = document.getElementById('favMenuChart').getContext('2d');
+        new Chart(favCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Nasi Gudeg', 'Ayam Goreng', 'Es Teh', 'Sate Usus'],
+                datasets: [{
+                    data: [40, 25, 20, 15],
+                    backgroundColor: ['#C26C0A','#96550A','#F4A261','#E76F51'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'bottom' },
+                    title: { display: true, text: 'Menu Paling Sering Dipilih' }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

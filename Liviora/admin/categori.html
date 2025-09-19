@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kategori - Admin</title>
+    <link rel="stylesheet" href="categori.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="#home">
+                    <h1>Pawon Adji - Admin</h1>
+                </a>
+                <button class="navbar-toggler" type="button" aria-expanded="false" id="navbar-toggler"  onclick="document.getElementById('navbar-item').classList.toggle('show')">
+                    <span class="hamburger-bar"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h22M5 16h22M5 24h22"/></svg></span>
+                </button>
+            </div>
+            <div class="navbar-item" id="navbar-item">
+                <ul>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="menu.html">Menu</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="order.html">Pesanan</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="penjual.html">Penjual</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="categori.html">Kategori</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="konten">
+        <div class="title">
+            <h2>Edit Kategori</h2>
+        </div>
+        <div class="table-wrapper">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td>No</td>
+                        <td>Kategori</td>
+                        <td>Deskripsi</td>
+                        <td>Edit</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Jajanan Pasar</td>
+                        <td>Jajanan dari pasar</td>
+                        <td><button class="btn-edit" onclick="openPopup('popupEdit', 'Jajanan Pasar')">Edit Kategori</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="popup" id="popupEdit">
+            <div class="popup-content">
+                <span class="close-popup" onclick="closePopup('popupEdit')">&times;</span>
+                <h2>Edit Kategori</h2>
+                <p id="kategoriNama"></p>
+                <form>
+                    <label>Nama Kategori</label>
+                    <input type="text" placeholder="Masukkan nama baru">
+
+                    <label>Konfirmasi Password</label>
+                    <input type="password" placeholder="Konfirmasi password">
+
+                    <button type="submit" class="btn-save">Simpan</button>
+                    <button type="submit" class="btn-erase">Hapus</button>
+                    <button type="button" class="btn-cancel" onclick="closePopup('popupEdit')">Batal</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function openPopup(id, nama) {
+        document.getElementById(id).style.display = "flex";
+        document.getElementById("kategoriNama").innerText = "categori: " + nama;
+        }
+        function closePopup(id) {
+        document.getElementById(id).style.display = "none";
+        }
+    </script>
+</body>
+</html>
