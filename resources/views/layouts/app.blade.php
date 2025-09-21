@@ -1,5 +1,6 @@
+<!-- resources/views/layouts/app.blade.php -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,20 +17,38 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     @auth
-                        @if (auth()->user()->role === 'admin')
-                            <li class="nav-item"><a class="nav-link" href="{{ route('admin.products.index') }}">Produk</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{{ route('admin.categories.index') }}">Kategori</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{{ route('admin.reports.index') }}">Laporan</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{{ route('admin.reports.generate') }}">Generate Laporan</a></li>
-                        @elseif (auth()->user()->role === 'staff')
-                            <li class="nav-item"><a class="nav-link" href="{{ route('seller.products.index') }}">Produk</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{{ route('seller.orders.index') }}">Pesanan</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{{ route('seller.reports.index') }}">Laporan</a></li>
+                        @if (auth()->user()->role === 'staff')
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('seller.dashboard') }}">Dashboard</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('seller.users.index') }}">Kelola Seller</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('seller.products.index') }}">Produk</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('seller.orders.index') }}">Pesanan</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('seller.reports.index') }}">Laporan</a>
+                            </li>
                         @else
-                            <li class="nav-item"><a class="nav-link" href="{{ route('customer.products.index') }}">Produk</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{{ route('customer.cart.index') }}">Keranjang</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{{ route('customer.orders.index') }}">Pesanan</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{{ route('customer.reports.index') }}">Laporan</a></li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('customer.dashboard') }}">Dashboard</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('customer.products.index') }}">Produk</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('customer.cart.index') }}">Keranjang</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('customer.orders.index') }}">Pesanan</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('customer.reports.index') }}">Laporan</a>
+                            </li>
                         @endif
                         <li class="nav-item">
                             <form action="{{ route('logout') }}" method="POST">
@@ -38,8 +57,12 @@
                             </form>
                         </li>
                     @else
-                        <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">Login</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">Register</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('register') }}">Register</a>
+                        </li>
                     @endauth
                 </ul>
             </div>
@@ -52,6 +75,15 @@
         @endif
         @if (session('error'))
             <div class="alert alert-danger">{{ session('error') }}</div>
+        @endif
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
         @endif
         @yield('content')
     </div>

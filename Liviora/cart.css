@@ -73,7 +73,7 @@ body{
 
 .navbar-item a:hover {
     color: white;
-    background-color: #DE651A;
+    background-color: #000;
 }
 
 .navbar-toggler {
@@ -94,7 +94,7 @@ body{
 }
 
 .navbar-toggler:hover {
-    background-color: #DE651A;
+    background-color: #000;
     border-radius: 5px;
 }
 
@@ -262,7 +262,7 @@ h2 { text-align: center;
 
 .checkout-btn {
     padding: 10px 20px; 
-    background: #FF9B45;
+    background: #000;
     border:none; 
     border-radius: 8px;
     cursor:pointer;
@@ -270,7 +270,7 @@ h2 { text-align: center;
 }
 
 .checkout-btn:hover{
-    background: #DE651A;
+    background: #000;
 }
 
 .pilih-semua {

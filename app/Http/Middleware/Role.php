@@ -4,13 +4,15 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Symfony\Component\HttpFoundation\Response;
 
 class Role
 {
-    public function handle(Request $request, Closure $next, ...$roles)
+    public function handle(Request $request, Closure $next, string $role): Response
     {
-        if (!auth()->check() || !in_array(auth()->user()->role, $roles)) {
-            return redirect()->route('welcome')->with('error', 'Akses ditolak.');
+        if (!Auth::check() || Auth::user()->role !== $role) {
+            return redirect('/login')->with('error', 'Akses ditolak.');
         }
         return $next($request);
     }

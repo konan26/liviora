@@ -87,7 +87,7 @@ section:last-child {
 
 .navbar-item a:hover {
     color: white;
-    background-color: #DE651A;
+    background-color: #0000;
 }
 
 .navbar-toggler {
@@ -112,7 +112,7 @@ section:last-child {
 }
 
 .navbar-toggler:hover {
-    background-color: #DE651A;
+    background-color: #0000;
     border-radius: 5px;
 }
 
@@ -245,7 +245,7 @@ section:last-child {
 }
 
 .kategori a:hover {
-    background: #DE651A;
+    background: #0000;
     color: #fff;
 }
 
@@ -352,7 +352,7 @@ a {
 }
 
 button {
-    background-color: #FF9B45;
+    background-color: #0000;
     border: none;
     padding: 0.5rem 0.8rem;
     text-align: center;
@@ -366,7 +366,7 @@ button {
 }
 
 button:hover{
-    background: #DE651A;
+    background: #0000;
     color: #fff;
 }
 
@@ -396,7 +396,7 @@ button:hover{
 
 footer {
     width: 100%;
-    background-color: #E5720F;
+    background-color: #0000;
     padding: 1rem 0;
     align-items: center;
     font-family: 'Montserrat', sans-serif;
@@ -463,7 +463,7 @@ footer {
 
 .footer-mid li a:hover {
     color: white;
-    background-color: #DE651A;
+    background-color: #0000;
     padding: 0.3rem 1rem;
 }
 
